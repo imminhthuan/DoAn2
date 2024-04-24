@@ -198,7 +198,7 @@ const Trangchu = () => {
                                             </ul>
                                             <ul style={{ color: '#000000', fontFamily: 'Tahoma, Arial, Verdana, sans-serif', fontSize: '12px' }}>
                                                 <li>
-                                                    "Muốn biết rõ chi tiết hơn xin vui lòng liên lệ bang giám hiệu nahf trường để được tư vấn kỉ hơn. Xin trân trọng cảm ơn!"
+                                                    "Muốn biết rõ chi tiết hơn xin vui lòng liên lệ bang giám hiệu nhà trường để được tư vấn kỉ hơn. Xin trân trọng cảm ơn!"
                                                 </li>
                                             </ul>
                                         </div>
