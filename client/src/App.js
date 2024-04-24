@@ -7,7 +7,7 @@ import AdminLogin from "./components/login/adminLogin/AdminLogin";
 import FacultyLogin from "./components/login/facultyLogin/FacultyLogin";
 import StudentLogin from "./components/login/studentLogin/StudentLogin";
 
-import AdminHome from "./components/admin/Adminhome";
+import AdminHome from "./components/admin/AdminHome";
 import Body from "./components/admin/Body";
 import BodyProfile from "./components/admin/profile/BodyProfile";
 import BodyUpdate from "./components/admin/profile/Update/BodyUpdate";

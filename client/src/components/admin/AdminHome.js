@@ -9,7 +9,7 @@ import {
   getAllAdmin,
   getAllDepartment,
   getNotice,
-} from "../../redux/actions/adminActions";
+} from "../../redux/actions/adminActions.js";
 
 import '../../js-boostraps/jquery-3.2.1.min.js';
 import '../../js-boostraps/popper.min.js';
