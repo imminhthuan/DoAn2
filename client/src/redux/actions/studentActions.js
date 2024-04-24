@@ -25,7 +25,7 @@ export const studentUpdatePassword =
     try {
       const { data } = await api.studentUpdatePassword(formData);
       dispatch({ type: UPDATE_PASSWORD, payload: true });
-      alert("Password Updated");
+      //alert("Password Updated");
       navigate("/student/home");
     } catch (error) {
       dispatch({ type: SET_ERRORS, payload: error.response.data });

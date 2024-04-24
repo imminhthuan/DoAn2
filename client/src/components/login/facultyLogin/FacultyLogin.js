@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
-import Spinner from "../../../utils/Spinner";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { facultySignIn } from "../../../redux/actions/facultyActions";
+import '../../../components/login/CSS/main.css';
+import '../../../components/login/CSS/util.css';
+import '../../../vendor/bootstrap/css/bootstrap.min.css';
+import '../../../vendor/animate/animate.css';
+import '../../../vendor/css-hamburgers/hamburgers.min.css';
+import '../../../vendor/select2/select2.min.css';
 
+import '../../../vendor/jquery/jquery-3.2.1.min.js';
+import '../../../vendor/bootstrap/js/popper.js';
+import '../../../vendor/bootstrap/js/bootstrap.min.js';
+import '../../../vendor/select2/select2.min.js';
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { facultySignIn } from "../../../redux/actions/facultyActions.js"
+
+import Spinner from "../../../utils/Spinner";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
+import { FaSpinner } from 'react-icons/fa';
 
 const schema = yup
   .object({
@@ -29,9 +39,10 @@ const FacultyLogin = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const {
-    control,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm({
     defaultValues,
@@ -51,130 +62,94 @@ const FacultyLogin = () => {
   };
 
   return (
-    <div className="bg-[#5a51d6] h-screen w-screen flex items-center justify-center">
-      {/* <a href="/">
-        <button className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-right justify-center text-white text-base py-1 bg-[#FF2400]">
-          Home
-        </button>
-      </a> */}
-      <div className="grid grid-cols-2">
-        <div
-          className={`h-96 w-96 bg-white flex items-center justify-center ${
-            translate ? "translate-x-[12rem]" : ""
-          }  duration-1000 transition-all rounded-3xl shadow-2xl`}
-        >
-          <h1 className="text-[3rem]  font-bold text-center">
-            Faculty
-            <br />
-            Login
-          </h1>
-        </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className={`${
-            loading ? "h-[27rem]" : "h-96"
-          } w-96 bg-[#2c2f35] flex flex-col items-center justify-center ${
-            translate ? "-translate-x-[12rem]" : ""
-          }  duration-1000 transition-all space-y-6 rounded-3xl shadow-2xl`}
-        >
-          <a href="/">
-            <div className="absolute top-4 left-4 text-white cursor-pointer">
-              {/* Icons */}
-              <i className="fa-solid fa-reply-all"></i>
+    <div className="Login">
+      <div className="limiter">
+        <div className="container-login100">
+          <div className="wrap-login100">
+            <div className="login100-pic js-tilt" data-tilt>
+              <img src="/team.jpg" alt="IMG" />
             </div>
-          </a>
-          <h1 className="text-white text-3xl font-semibold">Faculty</h1>
-          <div className="space-y-1">
-            <p className="text-[#515966] font-bold text-sm">Username</p>
-            <div
-              className={`bg-[#515966] rounded-lg w-[14rem] flex  items-center ${
-                errors.username ? "border border-red-500" : ""
-              }`}
-            >
-              <Controller
-                name="username"
-                control={control}
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <input
-                    type="text"
-                    placeholder="Username"
-                    className="bg-[#515966] text-white px-2 outline-none py-2 rounded-lg placeholder:text-sm"
-                    {...field}
-                  />
-                )}
-              />
-            </div>
-          </div>
-          <div className="space-y-1">
-            <p className="text-[#515966] font-bold text-sm">Password</p>
-            <div
-              className={`bg-[#515966] rounded-lg px-2 flex items-center ${
-                errors.password ? "border border-red-500" : ""
-              }`}
-            >
-              <Controller
-                name="password"
-                control={control}
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <>
+
+            <form className="login100-form validate-form" onSubmit={handleSubmit(onSubmit)}>
+              <span className="login100-form-title">
+                <b>ĐĂNG NHẬP HỆ THỐNG</b>
+              </span>
+              <div className="wrap-input100 validate-input">
+                <Controller
+                  name="username"
+                  control={control}
+                  render={({ field }) => (
                     <input
-                      placeholder="Password"
-                      type={showPassword ? "text" : "password"}
-                      //pattern="^(?=.*[A-Z])(?=.*[@])(?=.*\d).{6,}$"
-                      //title="USE ONE : @-Number-UpperCase (at least 6 character)"
-                      className="bg-[#515966] text-white rounded-lg outline-none py-2  placeholder:text-sm"
                       {...field}
+                      className="input100"
+                      type="text"
+                      placeholder="Tài khoản quản trị"
+                      id="username"
                     />
-                    {showPassword ? (
-                      <VisibilityIcon
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="cursor-pointer"
-                      />
-                    ) : (
-                      <VisibilityOffIcon
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="cursor-pointer"
-                      />
-                    )}
-                  </>
-                )}
-              />
+                  )}
+                />
+                <span className="focus-input100"></span>
+                <span className="symbol-input100">
+                  <i className='bx bx-user'></i>
+                </span>
+              </div>
+              <div className="wrap-input100 validate-input">
+                <Controller
+                  name="password"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      autoComplete="off"
+                      className="input100"
+                      type="password"
+                      placeholder="Mật khẩu"
+                      id="password-field"
+                    />
+                  )}
+                />
+                <span toggle="#password-field" className="bx fa-fw bx-hide field-icon click-eye"></span>
+                <span className="focus-input100"></span>
+                <span className="symbol-input100">
+                  <i className='bx bx-key'></i>
+                </span>
+              </div>
+              <div className="container-login100-form-btn">
+                <input type="submit" value="Đăng nhập" id="submit" />
+              </div>
+              <div className="text-right p-t-12">
+                <a className="txt2" href="/forgot.html">
+                  Bạn quên mật khẩu?
+                </a>
+              </div>
+              {loading && (
+                <FaSpinner className="spin" />
+              )}
+
+              <ul className="mt-2">
+                {errors.username ? (
+                  <li>
+                    <small className="text-red-500">
+                      {errors.username.message}
+                    </small>
+                  </li>
+                ) : null}
+                {errors.password ? (
+                  <li>
+                    <small className="text-red-500">
+                      {errors.password.message}
+                    </small>
+                  </li>
+                ) : null}
+              </ul>
+            </form>
+            <div className="text-center p-t-70 txt2">
+              Phần mềm quản lý điểm sinh viên<i className="far fa-copyright" aria-hidden="true"></i>
+              <script type="text/javascript">document.write(new Date().getFullYear());</script> <a
+                className="txt2" href=" ">nhóm 4</a>
             </div>
           </div>
-          <button
-            type="submit"
-            className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-center justify-center text-white text-base py-1 bg-[#04bd7d]"
-          >
-            Login
-          </button>
-          {loading && (
-            <Spinner
-              message="Logging In"
-              height={30}
-              width={150}
-              color="#ffffff"
-              messageColor="#fff"
-            />
-          )}
-          <ul className="mt-2">
-            {errors.username ? (
-              <li>
-                <small className="text-red-500">
-                  {errors.username.message}
-                </small>
-              </li>
-            ) : null}
-            {errors.password ? (
-              <li>
-                <small className="text-red-500">
-                  {errors.password.message}
-                </small>
-              </li>
-            ) : null}
-          </ul>
-        </form>
+        </div>
       </div>
     </div>
   );

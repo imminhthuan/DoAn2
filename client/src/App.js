@@ -1,112 +1,96 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AddAdmin from "./components/admin/addAdmin/AddAdmin";
-import AddDepartment from "./components/admin/addDepartment/AddDepartment";
-import AddFaculty from "./components/admin/addFaculty/AddFaculty";
-import AddStudent from "./components/admin/addStudent/AddStudent";
-import AddSubject from "./components/admin/addSubject/AddSubject";
-import AdminHome from "./components/admin/AdminHome";
 
-import GetFaculty from "./components/admin/getFaculty/GetFaculty";
-import GetStudent from "./components/admin/getStudent/GetStudent";
-import GetSubject from "./components/admin/getSubject/GetSubject";
-import AdminProfile from "./components/admin/profile/Profile";
-import AdminFirstTimePassword from "./components/admin/profile/update/firstTimePassword/FirstTimePassword";
-import AdminPassword from "./components/admin/profile/update/password/Password";
+import TrangChu from './components/TrangChu/trangchu';
 
-import AdminUpdate from "./components/admin/profile/update/Update";
-import CreateTest from "./components/faculty/createTest/CreateTest";
-import FacultyHome from "./components/faculty/FacultyHome";
-import MarkAttendance from "./components/faculty/markAttendance/MarkAttendance";
-import FacultyProfile from "./components/faculty/profile/Profile";
-import FacultyFirstTimePassword from "./components/faculty/profile/update/firstTimePassword/FirstTimePassword";
-import FacultyPassword from "./components/faculty/profile/update/password/Password";
-import FacultyUpdate from "./components/faculty/profile/update/Update";
-import UploadMarks from "./components/faculty/uploadMarks/UploadMarks";
 import AdminLogin from "./components/login/adminLogin/AdminLogin";
-import AdminRegister from "./components/register/adminRegister/AdminRegister";
 import FacultyLogin from "./components/login/facultyLogin/FacultyLogin";
-import FacultyRegister from "./components/register/facultyRegister/FacultyRegister";
-import Login from "./components/login/Login";
-import Register from "./components/register/Register";
-
 import StudentLogin from "./components/login/studentLogin/StudentLogin";
-import StudentRegister from "./components/register/studentRegister/StudentRegister";
-import StudentFirstTimePassword from "./components/student/profile/update/firstTimePassword/FirstTimePassword";
-import StudentHome from "./components/student/StudentHome";
-import StudentProfile from "./components/student/profile/Profile";
-import StudentUpdate from "./components/student/profile/update/Update";
-import StudentPassword from "./components/student/profile/update/password/Password";
-import SubjectList from "./components/student/subjectList/SubjectList";
-import TestResult from "./components/student/testResult/TestResult";
-import Attendance from "./components/student/attendance/Attendance";
-import DeleteAdmin from "./components/admin/deleteAdmin/DeleteAdmin";
-import DeleteDepartment from "./components/admin/deleteDepartment/DeleteDepartment";
-import DeleteFaculty from "./components/admin/deleteFaculty/DeleteFaculty";
-import DeleteStudent from "./components/admin/deleteStudent/DeleteStudent";
-import DeleteSubject from "./components/admin/deleteSubject/DeleteSubject";
-import CreateNotice from "./components/admin/createNotice/CreateNotice";
-import Result from "./components/faculty/result/Result";
+
+import AdminHome from "./components/admin/Adminhome";
+import Body from "./components/admin/Body";
+import BodyProfile from "./components/admin/profile/BodyProfile";
+import BodyUpdate from "./components/admin/profile/Update/BodyUpdate";
+import BodyPassword from "./components/admin/profile/Update/Password/BodyPassword";
+import BodyThongBao from "./components/admin/ThongBao/BodyThongBao";
+import Bodys from "./components/faculty/Body";
+import FacultyHome from './components/faculty/FacultyHome';
+import BodyGetFaculty from './components/admin/Faculty/BodyGetFaculty';
+import BodyAddFaculty from './components/admin/Faculty/BodyAddFaculty';
+import BodyGetStudent from './components/admin/Student/BodyGetStudent';
+import BodyAddStudent from './components/admin/Student/BodyAddStudent';
+import BodyGetSubject from './components/admin/Subject/BodyGetSubject';
+import BodyAddSubject from './components/admin/Subject/BodyAddSubject';
+import BodyAddDepartment from './components/admin/Department/BodyAddDepartment';
+import BodyGetDepartment from './components/admin/Department/BodyGetDepartment';
+import BodyGetAdmin from './components/admin/Admin/BodyGetAdmin';
+import BodyAddAdmin from './components/admin/Admin/BodyAddAdmin';
+
+
+import BodyProfiles from './components/faculty/profile/BodyProfile';
+import BodyUpdates from './components/faculty/profile/update/BodyUpdate';
+import BodyPasswords from './components/faculty/profile/update/password/BodyPassword';
+import BodyTest from './components/faculty/createTest/BodyTest';
+import BodyUploadMarks from './components/faculty/uploadMarks/BodyUploadMarks';
+
+
+import StudentHome from './components/student/StudentHome';
+import Bodyss from './components/student/Body';
+import BodyProfilez from './components/student/profile/BodyProfile';
+import BodyUpdatez from './components/student/profile/update/BodyUpdate';
+import BodyPasswordz from './components/student/profile/update/password/BodyPassword';
+import BodySubjectList from './components/student/subjectList/BodySubjectList';
+import BodyTestResult from './components/student/testResult/BodyTestResult';
+
 
 const App = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Login />} />
-      <Route exact path="/register" element={<Register />} />
 
-      {/* Admin  */}
+      <Route exact path="/" element={<TrangChu />} />
 
-      <Route path="/login/adminlogin" element={<AdminLogin />} />
-      <Route path="/register/admin-register" element={<AdminRegister />} />
-      <Route path="/admin/home" element={<AdminHome />} />
-      <Route path="/admin/profile" element={<AdminProfile />} />
-      <Route path="/admin/update" element={<AdminUpdate />} />
-      <Route path="/admin/update/password" element={<AdminPassword />} />
-      <Route
-        path="/admin/updatepassword"
-        element={<AdminFirstTimePassword />}
-      />
-      <Route path="/admin/createnotice" element={<CreateNotice />} />
-      <Route path="/admin/addadmin" element={<AddAdmin />} />
-      <Route path="/admin/deleteadmin" element={<DeleteAdmin />} />
-      <Route path="/admin/adddepartment" element={<AddDepartment />} />
-      <Route path="/admin/deletedepartment" element={<DeleteDepartment />} />
-      <Route path="/admin/addfaculty" element={<AddFaculty />} />
-      <Route path="/admin/deletefaculty" element={<DeleteFaculty />} />
-      <Route path="/admin/deletestudent" element={<DeleteStudent />} />
-      <Route path="/admin/deletesubject" element={<DeleteSubject />} />
-      <Route path="/admin/allfaculty" element={<GetFaculty />} />
-      <Route path="/admin/addstudent" element={<AddStudent />} />
-      <Route path="/admin/addsubject" element={<AddSubject />} />
-      <Route path="/admin/allsubject" element={<GetSubject />} />
-      <Route path="/admin/allstudent" element={<GetStudent />} />
+      <Route exact path="/login/admin" element={<AdminLogin />} />
+      <Route exact path="/login/faculty" element={<FacultyLogin />} />
+      <Route exact path="/login/student" element={<StudentLogin />} />
 
-      {/* Faculty  */}
 
-      <Route path="/login/facultylogin" element={<FacultyLogin />} />
-      <Route path="/register/faculty-register" element={<FacultyRegister />} />
-      <Route path="/faculty/home" element={<FacultyHome />} />
-      <Route path="/faculty/password" element={<FacultyFirstTimePassword />} />
-      <Route path="/faculty/profile" element={<FacultyProfile />} />
-      <Route path="/faculty/update" element={<FacultyUpdate />} />
-      <Route path="/faculty/update/password" element={<FacultyPassword />} />
-      <Route path="/faculty/createtest" element={<CreateTest />} />
-      <Route path="/faculty/uploadmarks" element={<UploadMarks />} />
-      <Route path="/faculty/markattendance" element={<MarkAttendance />} />
-      <Route path="/faculty/result" element={<Result/>}/>
+      <Route path="/admin" element={<AdminHome />}>
+        <Route path="home" element={<Body />} />
+        <Route path="profile" element={<BodyProfile/>} />
+        <Route path="update" element={<BodyUpdate/>} />
+        <Route path="update/password" element={<BodyPassword/>} />
+        <Route path="nocite" element={<BodyThongBao/>} />
+        <Route path="getfaculty" element={<BodyGetFaculty/>} />
+        <Route path="getstudent" element={<BodyGetStudent/>} />
+        <Route path="getsubject" element={<BodyGetSubject/>} />
+        <Route path="getdepartment" element={<BodyGetDepartment/>} />
+        <Route path="getadmin" element={<BodyGetAdmin/>} />
+        <Route path="addfaculty" element={<BodyAddFaculty/>} />
+        <Route path="addstudent" element={<BodyAddStudent/>} />
+        <Route path="addsubject" element={<BodyAddSubject/>} />
+        <Route path="adddepartment" element={<BodyAddDepartment/>} />
+        <Route path="addadmin" element={<BodyAddAdmin/>} />
+      </Route>
 
-      {/* Student  */}
+      <Route path="/faculty" element={<FacultyHome />}>
+        <Route path="home" element={<Bodys />} />
+        <Route path="profile" element={<BodyProfiles />} />
+        <Route path="update" element={<BodyUpdates />} />
+        <Route path="update/password" element={<BodyPasswords />} />
+        <Route path="createTest" element={<BodyTest />} />
+        <Route path="uploadMarks" element={<BodyUploadMarks />} />
+      </Route>
 
-      <Route path="/login/studentlogin" element={<StudentLogin />} />
-      <Route path="/register/student-register" element={<StudentRegister />} />
-      <Route path="/student/home" element={<StudentHome />} />
-      <Route path="/student/password" element={<StudentFirstTimePassword />} />
-      <Route path="/student/profile" element={<StudentProfile />} />
-      <Route path="/student/update" element={<StudentUpdate />} />
-      <Route path="/student/update/password" element={<StudentPassword />} />
-      <Route path="/student/subjectlist" element={<SubjectList />} />
-      <Route path="/student/testresult" element={<TestResult />} />
-      <Route path="/student/attendance" element={<Attendance />} />
+      <Route path="/student" element={<StudentHome />}>
+        <Route path="home" element={<Bodyss />} />
+        <Route path="profile" element={<BodyProfilez />} />
+        <Route path="update" element={<BodyUpdatez />} />
+        <Route path="update/password" element={<BodyPasswordz />} />
+        <Route path="subjectList" element={<BodySubjectList />} />
+        <Route path="testResult" element={<BodyTestResult />} />
+
+
+      </Route>
     </Routes>
   );
 };

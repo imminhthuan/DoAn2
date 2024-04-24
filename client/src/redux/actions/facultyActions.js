@@ -27,7 +27,7 @@ export const facultyUpdatePassword =
     try {
       const { data } = await api.facultyUpdatePassword(formData);
       dispatch({ type: UPDATE_PASSWORD, payload: true });
-      alert("Password Updated");
+      //alert("Password Updated");
       navigate("/faculty/home");
     } catch (error) {
       dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -46,7 +46,7 @@ export const updateFaculty = (formData) => async (dispatch) => {
 export const createTest = (formData) => async (dispatch) => {
   try {
     const { data } = await api.createTest(formData);
-    alert("Test Created Successfully");
+    //alert("Test Created Successfully");
 
     dispatch({ type: ADD_TEST, payload: true });
   } catch (error) {
@@ -83,7 +83,7 @@ export const uploadMark =
         test,
       };
       const { data } = await api.uploadMarks(formData);
-      alert("Marks Uploaded Successfully");
+      //alert("Marks Uploaded Successfully");
       dispatch({ type: MARKS_UPLOADED, payload: true });
     } catch (error) {
       dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -102,7 +102,7 @@ export const markAttendance =
         section,
       };
       const { data } = await api.markAttendance(formData);
-      alert("Attendance Marked Successfully");
+      //alert("Attendance Marked Successfully");
       dispatch({ type: ATTENDANCE_MARKED, payload: true });
     } catch (error) {
       dispatch({ type: SET_ERRORS, payload: error.response.data });

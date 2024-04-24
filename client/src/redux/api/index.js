@@ -21,7 +21,7 @@ API.interceptors.request.use((req) => {
 export const adminSignIn = async(formData) =>{
   
   return await API.post("/api/admin/login", formData);
-  // console.log("formData");
+  //console.log("formData");
 } 
 
 export const adminUpdatePassword = (updatedPassword) =>

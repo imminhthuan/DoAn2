@@ -35,15 +35,15 @@ const Body = () => {
   }, []);
 
   return (
-    <div className="flex-[0.8] mt-3">
-      <div className="space-y-5">
-        <div className="flex text-gray-400 items-center space-x-2 ml-3 mt-6">
+    <div className="">
+      <div className="">
+        <div className="">
           <MenuBookIcon />
           <h1>All Subjects</h1>
         </div>
-        <div className=" mr-10 bg-white rounded-xl pt-6 pl-6 h-[29.5rem] ml-3">
-          <div className="col-span-3 mr-6">
-            <div className={classes.loadingAndError}>
+        <div className=" ">
+          <div className="">
+            <div className="">
               {loading && (
                 <Spinner
                   message="Loading"
@@ -54,7 +54,7 @@ const Body = () => {
                 />
               )}
               {error.noSubjectError && (
-                <p className="text-red-500 text-2xl font-bold">
+                <p className="">
                   {error.noSubjectError}
                 </p>
               )}
@@ -64,51 +64,51 @@ const Body = () => {
               subjects?.length !== 0 && (
                 <div className={classes.adminData}>
                   <div className="grid grid-cols-8">
-                    <h1 className={`${classes.adminDataHeading} col-span-1`}>
+                    <h1 className="">
                       Sr no.
                     </h1>
-                    <h1 className={`${classes.adminDataHeading} col-span-1`}>
+                    <h1 className="">
                       Subject Code
                     </h1>
-                    <h1 className={`${classes.adminDataHeading} col-span-2`}>
+                    <h1 className="">
                       Subject Name
                     </h1>
-                    <h1 className={`${classes.adminDataHeading} col-span-2`}>
+                    <h1 className="">
                       Attended
                     </h1>
-                    <h1 className={`${classes.adminDataHeading} col-span-1`}>
+                    <h1 className="">
                       Total
                     </h1>
-                    <h1 className={`${classes.adminDataHeading} col-span-1`}>
+                    <h1 className="">
                       Percentage
                     </h1>
                   </div>
                   {attendance?.map((res, idx) => (
                     <div
                       key={idx}
-                      className={`${classes.adminDataBody} grid-cols-8`}>
+                      className="">
                       <h1
-                        className={`col-span-1 ${classes.adminDataBodyFields}`}>
+                        className="">
                         {idx + 1}
                       </h1>
                       <h1
-                        className={`col-span-1 ${classes.adminDataBodyFields}`}>
+                        className="">
                         {res.subjectCode}
                       </h1>
                       <h1
-                        className={`col-span-2 ${classes.adminDataBodyFields}`}>
+                        className="">
                         {res.subjectName}
                       </h1>
                       <h1
-                        className={`col-span-2 ${classes.adminDataBodyFields}`}>
+                        className="">
                         {res.attended}
                       </h1>
                       <h1
-                        className={`col-span-1 ${classes.adminDataBodyFields}`}>
+                        className="">
                         {res.total}
                       </h1>
                       <h1
-                        className={`col-span-1 ${classes.adminDataBodyFields}`}>
+                        className="">
                         {res.percentage}
                       </h1>
                     </div>

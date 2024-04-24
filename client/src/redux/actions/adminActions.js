@@ -44,7 +44,7 @@ export const adminUpdatePassword = (formData, navigate) => async (dispatch) => {
   try {
     const { data } = await api.adminUpdatePassword(formData);
     dispatch({ type: UPDATE_PASSWORD, payload: true });
-    alert("Password Updated");
+    //alert("Password Updated");
     navigate("/admin/home");
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -107,7 +107,7 @@ export const updateAdmin = (formData) => async (dispatch) => {
 export const addAdmin = (formData) => async (dispatch) => {
   try {
     const { data } = await api.addAdmin(formData);
-    alert("Admin Added Successfully");
+    //alert("Admin Added Successfully");
     dispatch({ type: ADD_ADMIN, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -116,7 +116,7 @@ export const addAdmin = (formData) => async (dispatch) => {
 export const createNotice = (formData) => async (dispatch) => {
   try {
     const { data } = await api.createNotice(formData);
-    alert("Notice Created Successfully");
+    //alert("Notice Created Successfully");
     dispatch({ type: CREATE_NOTICE, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -133,7 +133,7 @@ export const getAdmin = (formData) => async (dispatch) => {
 export const deleteAdmin = (formData) => async (dispatch) => {
   try {
     const { data } = await api.deleteAdmin(formData);
-    alert("Admin Deleted");
+    //alert("Admin Deleted");
     dispatch({ type: DELETE_ADMIN, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -142,7 +142,7 @@ export const deleteAdmin = (formData) => async (dispatch) => {
 export const deleteFaculty = (formData) => async (dispatch) => {
   try {
     const { data } = await api.deleteFaculty(formData);
-    alert("Faculty Deleted");
+    //alert("Faculty Deleted");
     dispatch({ type: DELETE_FACULTY, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -151,7 +151,7 @@ export const deleteFaculty = (formData) => async (dispatch) => {
 export const deleteStudent = (formData) => async (dispatch) => {
   try {
     const { data } = await api.deleteStudent(formData);
-    alert("Student Deleted");
+    //alert("Student Deleted");
     dispatch({ type: DELETE_STUDENT, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -160,7 +160,7 @@ export const deleteStudent = (formData) => async (dispatch) => {
 export const deleteSubject = (formData) => async (dispatch) => {
   try {
     const { data } = await api.deleteSubject(formData);
-    alert("Subject Deleted");
+    //alert("Subject Deleted");
     dispatch({ type: DELETE_SUBJECT, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -169,7 +169,7 @@ export const deleteSubject = (formData) => async (dispatch) => {
 export const deleteDepartment = (formData) => async (dispatch) => {
   try {
     const { data } = await api.deleteDepartment(formData);
-    alert("Department Deleted");
+    //alert("Department Deleted");
     dispatch({ type: DELETE_DEPARTMENT, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -178,7 +178,7 @@ export const deleteDepartment = (formData) => async (dispatch) => {
 export const addDepartment = (formData) => async (dispatch) => {
   try {
     const { data } = await api.addDepartment(formData);
-    alert("Department Added Successfully");
+    //alert("Department Added Successfully");
     dispatch({ type: ADD_DEPARTMENT, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -188,7 +188,7 @@ export const addDepartment = (formData) => async (dispatch) => {
 export const addFaculty = (formData) => async (dispatch) => {
   try {
     const { data } = await api.addFaculty(formData);
-    alert("Faculty Added Successfully");
+    //alert("Faculty Added Successfully");
     dispatch({ type: ADD_FACULTY, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -207,7 +207,7 @@ export const getFaculty = (department) => async (dispatch) => {
 export const addSubject = (formData) => async (dispatch) => {
   try {
     const { data } = await api.addSubject(formData);
-    alert("Subject Added Successfully");
+    //alert("Subject Added Successfully");
     dispatch({ type: ADD_SUBJECT, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });
@@ -226,7 +226,7 @@ export const getSubject = (formData) => async (dispatch) => {
 export const addStudent = (formData) => async (dispatch) => {
   try {
     const { data } = await api.addStudent(formData);
-    alert("Student Added Successfully");
+    //alert("Student Added Successfully");
     dispatch({ type: ADD_STUDENT, payload: true });
   } catch (error) {
     dispatch({ type: SET_ERRORS, payload: error.response.data });

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Body from "./Body";
+import Body from "./BodyUpdate";
 import Header from "../../Header";
 import Sidebar from "../../Sidebar";
 import { useDispatch } from "react-redux";

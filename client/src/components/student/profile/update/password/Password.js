@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../../Header";
 import Sidebar from "../../../Sidebar";
-import Body from "./Body";
+import Body from "./BodyPassword";
 
 const Password = () => {
   return (

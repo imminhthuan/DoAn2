@@ -153,22 +153,25 @@ export const updateStudent = async (req, res) => {
       var result = [];
       for (var i = 0; i < test.length; i++) {
         var subjectCode = test[i].subjectCode;
-        var subject = await Subject.findOne({ subjectCode });
+        var subject = await Subject.find({ subjectCode });
         var marks = await Marks.findOne({
           student: req.userId,
           exam: test[i]._id,
         });
         if (marks) {
-          var temp = {
-            marks: marks.marks,
-            totalMarks: test[i].totalMarks,
-            subjectName: subject.subjectName,
-            subjectCode,
-            test: test[i].test,
-          };
-
-          result.push(temp);
-      //console.log(result)
+          if (subject !== null) {
+            var temp = {
+              marks: marks.marks,
+              totalMarks: test[i].totalMarks,
+              subjectName: subject.subjectName,
+              subjectCode,
+              test: test[i].test,
+            };
+            result.push(temp);
+          } else {
+            console.log("Subject is null");
+            // Xử lý khi subject là null, ví dụ: gán giá trị mặc định cho subjectName
+          }
 
         }
       }
