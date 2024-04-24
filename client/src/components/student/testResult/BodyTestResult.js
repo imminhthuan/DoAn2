@@ -95,6 +95,7 @@ const BodyTestResult = () => {
                         <th>Sr no.</th>
                         <th>Subject Code</th>
                         <th>Subject Name</th>
+                        <th>Test</th>    
                         <th>Marks</th>  
                         <th>Total Marks</th>    
                       </tr>
@@ -104,6 +105,7 @@ const BodyTestResult = () => {
                         <tr key={idx}>
                           <td>{idx + 1}</td>
                           <td>{res.subjectCode}</td>
+                          <td>{res.subjectName}</td>
                           <td>{res.test}</td>
                           <td>{res.marks}</td>
                           <td>{res.totalMarks}</td>                          
